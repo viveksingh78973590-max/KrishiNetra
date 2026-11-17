@@ -8,7 +8,7 @@ KrishiNetra is a digital farming companion for Indian farmers, with NASA-based w
 - **Soil Report AI (new menu item + dashboard card):** upload a photo or PDF of a soil test report / Soil Health Card, or type the values. Gemini reads the values; the app rates each one with Indian Soil Health Card ranges (`soil_report.py`), gives a 0-100 soil health score, explains what is happening in the soil and gives the best solution (fixes, fertilizer plan, organic options, suitable crops). If the AI is unavailable, typed values still get built-in rule-based advice. Reports are saved per farmer (`soil_reports` table). API: `POST /api/soil-report`, `GET/DELETE /api/soil-reports`.
 - **Live mandi prices:** `mandi_live.py` reads the official Agmarknet feed on data.gov.in. Add a free key as `DATA_GOV_API_KEY` in `.env` and restart. Prices are cached for 3 hours (Refresh button forces an update), the previous price and a per-day history are stored for change arrows and trend charts. Without a key the page clearly shows DEMO prices. API: `GET /api/mandi?state=..`, `GET /api/mandi/history?id=..`.
 
-## Navigation
+## Navigation is best
 - Before login, the public header shows Home, About this Project, How to use, Login, and Register.
 - After login, farmers land on the Farmer Dashboard. The authenticated navigation has no Home item; the public home page remains available to logged-out visitors.
 - The authenticated menu includes Crop Guide, Mandi Prices, Weather, Government Schemes, AI KrishiNetra, Fasal Vaidya, Soil, Calendar, Tips, Search, and Alerts.
